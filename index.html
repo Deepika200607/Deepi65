@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creative Portfolio</title>
+
+  <style>
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    body {
+
+      background: #f9f9f9;
+
+      color: #333;
+
+      line-height: 1.6;
+
+    }
+
+    /* HEADER */
+
+    header {
+
+      background: rgba(34,34,34,0.9);
+
+      color: #fff;
+
+      padding: 1rem 0;
+
+      text-align: center;
+
+      position: fixed;
+
+      top: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(6px);
+
+    }
+
+    header nav a {
+
+      color: #fff;
+
+      margin: 0 15px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+
+    }
+
+    header nav a:hover {
+
+      color: #ffcc70;
+
+    }
+
+    /* HERO */
+
+    #hero {
+
+      height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      background: linear-gradient(135deg, #ffcc70, #ff8177, #cf556c, #b12a5b);
+
+      background-size: 400% 400%;
+
+      animation: gradientBG 10s ease infinite;
+
+      color: #fff;
+
+      text-align: center;
+
+      padding: 20px;
+
+    }
+
+    @keyframes gradientBG {
+
+      0% {background-position: 0% 50%;}
+
+      50% {background-position: 100% 50%;}
+
+      100% {background-position: 0% 50%;}
+
+    }
+
+    #hero img {
+
+      width: 180px;
+
+      height: 180px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      border: 4px solid #fff;
+
+      margin-bottom: 20px;
+
+      transition: transform 0.4s ease;
+
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.4);
+
+    }
+
+    #hero img:hover {
+
+      transform: scale(1.1) rotate(3deg);
+
+    }
+
+    #hero h1 {
+
+      font-size: 3rem;
+
+      animation: fadeIn 2s ease-in-out;
+
+    }
+
+    #hero p {
+
+      font-size: 1.2rem;
+
+      margin-top: 10px;
+
+      opacity: 0.9;
+
+    }
+
+    @keyframes fadeIn {
+
+      from {opacity: 0; transform: translateY(20px);}
+
+      to {opacity: 1; transform: translateY(0);}
+
+    }
+
+    /* SECTIONS */
+
+    section {
+
+      padding: 100px 20px;
+
+      max-width: 1100px;
+
+      margin: auto;
+
+    }
+
+    #about, #projects, #contact {
+
+      background: #fff;
+
+      margin: 20px 0;
+
+      border-radius: 15px;
+
+      padding: 40px;
+
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+
+    }
+
+    h2 {
+
+      text-align: center;
+
+      margin-bottom: 20px;
+
+      font-size: 2rem;
+
+      color: #b12a5b;
+
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+      gap: 25px;
+
+    }
+
+    .project {
+
+      background: #fafafa;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+
+      transition: transform 0.3s ease;
+
+    }
+
+    .project img {
+
+      width: 100%;
+
+      height: 180px;
+
+      object-fit: cover;
+
+    }
+
+    .project:hover {
+
+      transform: translateY(-8px);
+
+    }
+
+    .project h3 {
+
+      margin: 15px;
+
+      font-size: 1.3rem;
+
+      color: #333;
+
+    }
+
+    .project p {
+
+      margin: 0 15px 20px;
+
+      color: #555;
+
+    }
+
+    /* CONTACT */
+
+    form {
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+    form input, form textarea {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin: 10px 0;
+
+      border-radius: 8px;
+
+      border: 1px solid #ccc;
+
+      font-size: 1rem;
+
+    }
+
+    form button {
+
+      background: linear-gradient(135deg, #ff8177, #b12a5b);
+
+      color: #fff;
+
+      border: none;
+
+      padding: 12px 20px;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      font-size: 1rem;
+
+      transition: 0.3s;
+
+    }
+
+    form button:hover {
+
+      opacity: 0.9;
+
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 20px;
+
+      background: #222;
+
+      color: #fff;
+
+      margin-top: 20px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <nav>
+
+      <a href="#hero">Home</a>
+
+      <a href="#about">About</a>
+
+      <a href="#projects">Projects</a>
+
+      <a href="#contact">Contact</a>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section id="hero">
+
+    <img src="https://i.postimg.cc/44w2qdP0/IMG-20250806-125954.jpg" alt="My Photo">
+
+    <h1>Hi, I'm Deepika 👋</h1>
+
+    <p>Secound BCA student 
+    A passionate about learning web development</p>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2>About Me</h2>
+
+    <p>Hello! I love creating modern, interactive websites with unique designs. Always learning, always improving .I like to learn new tools. </p>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project">
+
+        <img src="https://i.postimg.cc/9Mc5PkXw/images.jpg" alt="Project One">
+
+        <h3>Project One</h3>
+
+        <p>A responsive website with creative UI/UX design.</p>
+
+      </div>
+
+      <div class="project">
+
+        <img src="https://i.postimg.cc/CxWw8Jfb/images.png" alt="Project Two">
+
+        <h3>Project Two</h3>
+
+        <p>Portfolio built with HTML, CSS, and JavaScript.</p>
+
+      </div>
+
+      <div class="project">
+
+        <img src="https://i.postimg.cc/4xpS81S6/images-1.jpg" alt="Project Three">
+
+        <h3>Project Three</h3>
+
+        <p>A fun JavaScript mini-game for practice.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <form onsubmit="return sendMessage()">
+
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <input type="email" id="email" placeholder="Your Email" required>
+
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© 2025 Deepika| All rights reserved</p>
+
+  </footer>
+
+  <script>
+
+    // Smooth scroll
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+      anchor.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href"))
+
+          .scrollIntoView({ behavior: "smooth" });
+
+      });
+
+    });
+
+    // Fake contact form submit
+
+    function sendMessage() {
+
+      alert("✅ Thank you, your message has been sent!");
+
+      return false; 
+
+    }
+
+  </script>
+
+</body>
+
+</html>
